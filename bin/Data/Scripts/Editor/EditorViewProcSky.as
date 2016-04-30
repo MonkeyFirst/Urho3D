@@ -382,6 +382,8 @@ void UpdateProcSkyCommon()
 void UpdateProcSkyPerViewSplit(Camera@ camera) 
 {
     // Early out
+    if (camera is null || renderPath is null) return;
+    
     if (editorScene is null || !procSkyShow) return;
     
     // Check if camera in ortho mode hide ProcSky
